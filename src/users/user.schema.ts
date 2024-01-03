@@ -5,7 +5,7 @@ export type UserDocument = User & Document;
 
 @Schema()
 export class User {
-  @Prop()
+  @Prop({ default: 'https://cdn-icons-png.flaticon.com/512/666/666201.png' })
   photo: string;
   @Prop()
   name: string;
@@ -13,8 +13,8 @@ export class User {
   username: string;
   @Prop()
   password: string;
-  @Prop({default: "No information about the user"})
-  bio: string
+  @Prop({ default: 'No information about the user' })
+  bio: string;
   @Prop([{ type: Object }]) //esto indica que tanto own
   own: Array<any>;
   @Prop([{ type: Object }]) //como bought son arrays que guardarán objetos
